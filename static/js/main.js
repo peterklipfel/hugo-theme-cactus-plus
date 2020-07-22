@@ -32,5 +32,26 @@ function retina() {
 		$(image).attr("src", path);
 	});
 };
+
+function checkDark() {
+  if(document.cookie == "dark"){
+    $('body').addClass('dark')
+  } else {
+    $('body').removeClass('dark')
+  }
+}
+
+function toggleDark() {
+  $('body').toggleClass('dark')
+  if($('body').hasClass('dark')){
+    document.cookie = 'dark'
+  } else {
+    document.cookie = 'light'
+  }
+}
+
+$(document).ready(checkDark)
  
 $(document).ready(retina);
+
+

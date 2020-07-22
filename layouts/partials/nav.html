@@ -1,4 +1,6 @@
 <nav class="main-nav">
+  <a class="darkToggle" onClick="toggleDark()"><i class="fa fa-adjust"></i></a>
+
 	{{ $url := replace .Permalink .Site.BaseURL "" }}
 	{{ if not .IsHome }}
 		<a href='{{ .Site.BaseURL }}'> <span class="arrow">←</span>{{ with .Site.Params.home }}{{ . }}{{ else }}Home{{ end }}</a>
