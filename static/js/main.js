@@ -34,7 +34,7 @@ function retina() {
 };
 
 function checkDark() {
-  if(document.cookie == "dark"){
+  if(Cookies.get("darkMode") === 'true'){
     $('body').addClass('dark')
   } else {
     $('body').removeClass('dark')
@@ -44,9 +44,9 @@ function checkDark() {
 function toggleDark() {
   $('body').toggleClass('dark')
   if($('body').hasClass('dark')){
-    document.cookie = 'dark'
+    Cookies.set("darkMode", 'true')
   } else {
-    document.cookie = 'light'
+    Cookies.set("darkMode", 'false')
   }
 }
 
